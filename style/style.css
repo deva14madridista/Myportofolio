@@ -37,12 +37,13 @@ p{
     line-height: 1.9rem;
 }
 
-p, span, label, input, textarea, li{
+p, span, label, input, textarea {
     color: var(--secondarytextcolor);
 }
 
-a{
+a, li{
     text-decoration: none;
+    color: #f1f1f1;
 }
 
 .main-container{
@@ -106,12 +107,32 @@ a{
     display: flex;
     justify-content: space-between;
     padding: 2rem 0;
+    background-color: var(--primaryiconcolor);
+    margin-bottom: 50px;
 }
 
 .nav ul{
     list-style: none;
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
+    padding: 6px;
+    margin-right: 150px;
+    color: #f1f1f1;
+}
+
+.nav ul li a {
+    padding: 7px; 
+    display: inline-block; 
+    color: #f1f1f1;
+}
+
+
+.nav ul li a:hover{
+    color: #000000;
+    transition: 0.3s;
+    padding: 7px;
+    background-color: #eeeeee;
+    border-radius: 10px
 }
 
 .logo{
@@ -119,6 +140,8 @@ a{
     align-items: center;
     font-weight: 700;
     font-size: 2rem;
+    margin-left: 200px;
+    color: #f1f1f1;
 }
 
 .logo a {
@@ -171,8 +194,14 @@ a{
 }
 
 .hero-right img {
-    width: 90%;
+    width: 500px;            /* atur ukuran */
+    height: 500px;           /* samakan dengan width */
+    border-radius: 50%;      /* bulat sempurna */
+    border: 5px solid var(--primaryiconcolor);  /* border putih biar kontras dengan bg hitam */
+    object-fit: cover;       /* isi lingkaran penuh tanpa gepeng */
 }
+
+
 .hero-right{
     display: flex;
     justify-content: center;
@@ -235,6 +264,10 @@ a{
 .portofolio-cover img {
     width: 100%;
     height: 100%;
+}
+
+.portofolio-cover .rotate img{
+    transform: rotate(90deg);
 }
 
 .portofolio-info{
@@ -427,7 +460,7 @@ footer{
 }
 
 .footer-icon svg{
-    fill: #3e3f40;
+    fill: #c5c6c8;
 }
 
 .footer-icon svg:hover{
