@@ -194,11 +194,11 @@ a, li{
 }
 
 .hero-right img {
-    width: 500px;            /* atur ukuran */
-    height: 500px;           /* samakan dengan width */
-    border-radius: 50%;      /* bulat sempurna */
-    border: 5px solid var(--primaryiconcolor);  /* border putih biar kontras dengan bg hitam */
-    object-fit: cover;       /* isi lingkaran penuh tanpa gepeng */
+    width: 90%;
+    aspect-ratio: 1 / 1;     /* bikin kotak otomatis */
+    border-radius: 50%;
+    border: 5px solid #fff;
+    object-fit: cover;
 }
 
 
@@ -362,6 +362,10 @@ a, li{
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 1.5rem;
+}
+
+.skill-list ul li {
+    color: #000;
 }
 
 .skill-right ul{

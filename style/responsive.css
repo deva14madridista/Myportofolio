@@ -1,137 +1,246 @@
-:root{
-    --primarytextcolor: #232e35;
-    --secondarytextcolor: #656d72;
+    :root{
+        --primarytextcolor: #232e35;
+        --secondarytextcolor: #656d72;
 
-    --bordercolor:#f1f1f1;
-    --linecolor:#d9d9d9;
+        --bordercolor:#f1f1f1;
+        --linecolor:#d9d9d9;
 
-    --primarybackgroundcolor:#fff;
-    --secondarybackgroundcolor:#fbfbfb;
-    --thirdbackgroundcolor:#f5f3fe;
+        --primarybackgroundcolor:#fff;
+        --secondarybackgroundcolor:#fbfbfb;
+        --thirdbackgroundcolor:#f5f3fe;
 
-    --primaryiconcolor:#7e74f1;
-    --primaryiconcolorhover:#5d51e8;
+        --primaryiconcolor:#7e74f1;
+        --primaryiconcolorhover:#5d51e8;
 
-    --sectionpadding:4rem 0;
+        --sectionpadding:4rem 0;
 
-    --itemborderradius:0.7rem;
-}
-
-@media screen and (max-width: 1000px) {
-    p {
-        font-size: 0.9rem;
-        line-height: 1.8rem;
+        --itemborderradius:0.7rem;
     }
 
-    .grid-3{
+    @media screen and (max-width: 1000px) {
+        p {
+            font-size: 0.9rem;
+            line-height: 1.8rem;
+        }
+
+        .grid-3{
+            gap: 1rem;
+        }
+
+        .skill-right ul li{
+            font-size: .9rem;
+        }
+    }
+
+    @media screen and (max-width: 825px){
+        /* burger */
+        .burger{
+            display: block;
+            cursor: pointer;
+        }
+        .toggle-burger .line-1 {
+            transform: rotate(-45deg) translate(-5px, 7px);
+        }
+        
+        .toggle-burger .line-2 {
+            opacity: 0;
+        }
+        
+        .toggle-burger .line-3 {
+            transform: rotate(45deg) translate(-5px, -7px);
+        }
+        
+
+
+        /* navigation */
+        nav{
+            position: fixed;
+            width: 50%;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            flex-direction: column;
+            background: var(--primarybackgroundcolor);
+            border-left: 1px solid var(--bordercolor);
+            z-index: 9;
+            transform: translateX(100%);
+            transition: .3s ease-in-out;
+        }
+
+        nav ul{
+            height: 100vh;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nav-active{
+            transform: translateX(0);
+        }
+
+        .section-title{
+            font-size: 1.6rem;
+            margin: .6rem 0 2.5rem;
+        }
+
+        .pre-title{
+            font-size: .8rem;
+        }
+        /* hero */
+        #hero{
+            grid-template-columns: 1fr;
+            height: fit-content;
+        }
+
+        .hero-right{
+            order: -1;
+        }
+
+        .hero-right img{
+            width: 40%;
+        }
+
+        .hero-left{
+            text-align: center;
+            padding-bottom:5rem ;
+            margin-top: 5 rem;
+        }
+
+        .hero-left .pre-title{
+            margin: 0 auto;
+            margin-top: 1rem;
+        }
+
+        .hero-name{
+            font-size: 2.3rem;
+            margin-bottom: .5rem;
+        }
+
+        .skill-grid{
+            gap: 1;
+        }
+
+        /* footer */
+        footer{
+            padding: 2rem 0;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+    /* skill grid jadi 1 kolom */
+    .skill-grid {
+        grid-template-columns: 1fr; 
+        gap: 2rem;
+    }
+
+    .education {
+        flex-direction: column; /* dari kiri-kanan jadi atas-bawah */
         gap: 1rem;
     }
 
-    .skill-right ul li{
-        font-size: .9rem;
+    .education .line {
+        display: none; /* sembunyiin garis timeline biar simpel */
+    }
+
+    .education-info {
+        text-align: left;
+    }
+
+    .skill-list {
+        grid-template-columns: 1fr; /* list jadi 1 kolom */
+        gap: 1rem;
+    }
+
+    .skill-right ul {
+        padding: 0;
+        line-height: 1.8rem;
+    }
+
+    .skill-right p {
+        text-align: justify;
+        display: flex;
     }
 }
 
-@media screen and (max-width: 825px){
-    /* burger */
-    .burger{
-        display: block;
-        cursor: pointer;
-    }
-    .toggle-burger .line-1 {
-        transform: rotate(-45deg) translate(-5px, 7px);
-    }
-    
-    .toggle-burger .line-2 {
-        opacity: 0;
-    }
-    
-    .toggle-burger .line-3 {
-        transform: rotate(45deg) translate(-5px, -7px);
-    }
-    
 
+    @media screen and (max-width: 640px){
+        .section-title{
+            font-size: 1.3rem;
+        }
 
-    /* navigation */
-    nav{
-        position: fixed;
-        width: 50%;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        flex-direction: column;
-        background: var(--primarybackgroundcolor);
-        border-left: 1px solid var(--bordercolor);
-        z-index: 9;
-        transform: translateX(100%);
-        transition: .3s ease-in-out;
+        .pre-title{
+            font-size: .7rem;
+        }
+        .skill-grid {
+        grid-template-columns: 1fr; 
+        gap: 2rem;
     }
 
-    nav ul{
-        height: 100vh;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
+    .education {
+        flex-direction: column; /* dari kiri-kanan jadi atas-bawah */
+        gap: 1rem;
     }
 
-    .nav-active{
-        transform: translateX(0);
+    .education .line {
+        display: none; /* sembunyiin garis timeline biar simpel */
     }
 
-    .section-title{
-        font-size: 1.6rem;
-        margin: .6rem 0 2.5rem;
+    .education-info {
+        text-align: left;
     }
 
-    .pre-title{
-        font-size: .8rem;
+    .skill-list {
+        grid-template-columns: 1fr; /* list jadi 1 kolom */
+        gap: 1rem;
     }
-    /* hero */
-    #hero{
+
+    .skill-right ul {
+        padding: 0;
+        line-height: 1.8rem;
+    }
+
+    .skill-right p {
+        text-align: justify;
+    }
+
+    }
+
+    @media screen and (max-width: 480px) {
+    #skill {
+        padding: 3rem 1rem; /* biar gak terlalu mepet */
+    }
+
+    .skill-grid {
         grid-template-columns: 1fr;
-        height: fit-content;
+        gap: 1.5rem;
     }
 
-    .hero-right{
-        order: -1;
+    .education {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .8rem;
     }
 
-    .hero-right img{
-        width: 40%;
+    .education .line {
+        display: none; /* buang garis biar ga makan tempat */
     }
 
-    .hero-left{
-        text-align: center;
-        padding-bottom:5rem ;
-        margin-top: 5 rem;
+    .education-info {
+        width: 100%;
+        text-align: left;
     }
 
-    .hero-left .pre-title{
-        margin: 0 auto;
-        margin-top: 1rem;
+    .skill-right {
+        width: 100%;
     }
 
-    .hero-name{
-        font-size: 2.3rem;
-        margin-bottom: .5rem;
+    .skill-list {
+        grid-template-columns: 1fr;
+        gap: .5rem;
     }
 
-    .skill-grid{
-        gap: 1;
-    }
-
-    /* footer */
-    footer{
-        padding: 2rem 0;
-    }
-}
-
-@media screen and (max-width: 640px){
-    .section-title{
-        font-size: 1.3rem;
-    }
-
-    .pre-title{
-        font-size: .7rem;
+    .skill-right ul {
+        padding: 0;
+        margin: 0;
     }
 }
